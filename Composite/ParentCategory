@@ -21,6 +21,12 @@ public class ParentCategory implements Category {
     }
  
     public void removeCategory(Category c) {
-        childCategories = (List<Category>)ListUtils.removeObjectFromList(this.childCategories, c);
+        
+        for (Integer i = childCategories.size() - 1; i >= 0 ; --i) {
+        	if (childCategories.get(i) == c) {
+				childCategories.remove(i); 
+			}           
+    	}
     }
+    
 }
