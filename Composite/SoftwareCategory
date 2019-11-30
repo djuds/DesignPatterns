@@ -1,0 +1,15 @@
+public class SoftwareCategory implements Category {
+ 
+    private Integer id;
+    private String name;
+    
+    public SoftwareCategory(Integer id, String name){
+        this.id = id;
+        this.name = name;
+    }
+ 
+    public void printCategoryName() {
+        System.Debug(SoftwareCategory.Class.getName());
+    }
+ 
+}
