@@ -1,0 +1,26 @@
+public class ParentCategory implements Category {
+    private Integer id;
+    private String name;
+ 
+    private List<Category> childCategories;
+ 
+    public ParentCategory(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+        this.childCategories = new List<Category>();
+    }
+ 
+    public void printCategoryName() {        
+        for(Category c: this.childCategories){
+            c.printCategoryName();
+        }
+    }
+ 
+    public void addCategory(Category c) {
+        this.childCategories.add(c);
+    }
+ 
+    public void removeCategory(Category c) {
+        childCategories = (List<Category>)ListUtils.removeObjectFromList(this.childCategories, c);
+    }
+}
